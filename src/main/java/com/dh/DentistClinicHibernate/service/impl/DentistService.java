@@ -1,6 +1,7 @@
 package com.dh.DentistClinicHibernate.service.impl;
 
 import com.dh.DentistClinicHibernate.dto.DentistDTO;
+import com.dh.DentistClinicHibernate.dto.PatientDTO;
 import com.dh.DentistClinicHibernate.entity.Dentist;
 import com.dh.DentistClinicHibernate.repository.DentistRepository;
 import com.dh.DentistClinicHibernate.service.IDentistService;
@@ -10,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class DentistService implements IDentistService{
@@ -45,7 +47,9 @@ public class DentistService implements IDentistService{
 
     @Override
     public List<DentistDTO> findAll() {
-        return null;
+        List<Dentist> listDentist = dentistRepository.findAll();
+        List<DentistDTO> listDentistDTO = listDentist.stream().map(item -> mapDTO(item)).collect(Collectors.toList());
+        return listDentistDTO;
     }
 
 

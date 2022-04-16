@@ -1,25 +1,19 @@
 package com.dh.DentistClinicHibernate.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+
 import javax.persistence.*;
 
 @Entity
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
-
+@Data
+@Table(name = "addreses")
 public class Address {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    public Integer address_id;
-    public String street;
-    public String number;
-    public String city;
-    public String state;
-
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+    private String street;
+    private String number;
+    private String city;
+    private String state;
 
 }
