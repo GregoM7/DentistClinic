@@ -1,0 +1,5 @@
+2022-04-19 09:50:13 ERROR GlobalExceptions:22 - ModelMapper mapping errors:
+
+1) Error mapping com.dh.DentistClinicHibernate.entity.Dentist to com.dh.DentistClinicHibernate.dto.DentistDTO
+
+1 error
