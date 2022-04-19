@@ -1,6 +1,7 @@
 package com.dh.DentistClinicHibernate.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -18,14 +19,14 @@ public class Patient {
     private String name;
     private String lastname;
     private Integer identitycard;
-    private LocalDate dateofadmission;
+    private LocalDate dateofadmission = LocalDate.now();
     // Relacion con Address
     @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "id_address", referencedColumnName = "id")
     private Address address;
     // Relacion con Appoinment
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_appointment", referencedColumnName = "id")
+    @OneToMany(mappedBy = "patient")
+    @JsonIgnore
     private Set<Appointment> appointment;
 
 

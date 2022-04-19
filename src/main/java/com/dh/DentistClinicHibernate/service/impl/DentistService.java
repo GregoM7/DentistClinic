@@ -3,6 +3,7 @@ package com.dh.DentistClinicHibernate.service.impl;
 import com.dh.DentistClinicHibernate.dto.DentistDTO;
 import com.dh.DentistClinicHibernate.dto.PatientDTO;
 import com.dh.DentistClinicHibernate.entity.Dentist;
+import com.dh.DentistClinicHibernate.entity.Patient;
 import com.dh.DentistClinicHibernate.repository.DentistRepository;
 import com.dh.DentistClinicHibernate.service.IDentistService;
 import com.sun.istack.NotNull;
@@ -34,15 +35,20 @@ public class DentistService implements IDentistService{
 
     @Override
     public void deleteById(Integer id) {
-        Dentist dentist =dentistRepository.getById(id);
+        Dentist dentist = dentistRepository.findById(id)
+                .orElseThrow(()-> new RuntimeException("No se encontro el paciente"));
         dentistRepository.delete(dentist);
     }
 
     @Override
     public DentistDTO update(DentistDTO dentistDTO) {
-        Dentist dentist = mapEntity(dentistDTO);
-        Dentist newdentistsave = dentistRepository.save(dentist);
-        return mapDTO(newdentistsave);
+        Dentist dentist = dentistRepository.findById(dentistDTO.getId())
+                .orElseThrow(()-> new RuntimeException("No se encontro el dentista"));
+        dentist.setName(dentistDTO.getName());
+        dentist.setLastname(dentistDTO.getLastname());
+        dentist.setEnrollment(dentistDTO.getEnrollment());
+        Dentist dentistsave = dentistRepository.save(dentist);
+        return mapDTO(dentistsave);
     }
 
     @Override

@@ -1,5 +1,6 @@
 package com.dh.DentistClinicHibernate.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
 import javax.persistence.*;
@@ -16,8 +17,8 @@ public class Dentist{
     private String name;
     private String lastname;
     private Integer enrollment;
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_appointment", referencedColumnName = "id")
+    @OneToMany(mappedBy = "dentist")
+    @JsonIgnore
     private Set<Appointment> appointment;
 
 }
