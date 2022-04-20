@@ -45,7 +45,6 @@ class PatientServiceTest {
 
     @Test
     void update() {
-        //Creo un paciente
         PatientDTO patient = new PatientDTO();
         patient.setName("Zaira");
         patient.setLastname("Tira");
