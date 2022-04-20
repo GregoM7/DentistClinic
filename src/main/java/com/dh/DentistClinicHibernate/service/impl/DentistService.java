@@ -6,6 +6,7 @@ import com.dh.DentistClinicHibernate.entity.Dentist;
 import com.dh.DentistClinicHibernate.entity.Patient;
 import com.dh.DentistClinicHibernate.repository.DentistRepository;
 import com.dh.DentistClinicHibernate.service.IDentistService;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sun.istack.NotNull;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,7 @@ public class DentistService implements IDentistService{
     @Autowired
     private DentistRepository dentistRepository;
     @Autowired
-    private ModelMapper mapper;
+    private ObjectMapper mapper;
 
     public DentistDTO findById(@NotNull Integer id){
         Dentist dentist = dentistRepository.getById(id);
@@ -61,12 +62,12 @@ public class DentistService implements IDentistService{
 
     //------ MAPPER----
     private DentistDTO mapDTO(Dentist dentist){
-        DentistDTO dentistDTO = mapper.map(dentist, DentistDTO.class);
+        DentistDTO dentistDTO = mapper.convertValue(dentist, DentistDTO.class);
         return dentistDTO;
     }
 
-    private Dentist mapEntity(DentistDTO dentistDTO){
-        Dentist dentist = mapper.map(dentistDTO, Dentist.class);
+    public Dentist mapEntity(DentistDTO dentistDTO){
+        Dentist dentist = mapper.convertValue(dentistDTO, Dentist.class);
         return dentist;
     }
 }

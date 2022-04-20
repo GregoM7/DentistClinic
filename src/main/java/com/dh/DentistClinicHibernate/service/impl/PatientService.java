@@ -84,7 +84,7 @@ public class PatientService implements IPatientService {
         return patientDTO;
     }
 
-    private Patient mapEntity(PatientDTO patientDTO){
+    public Patient mapEntity(PatientDTO patientDTO){
         Patient patient = mapper.map(patientDTO, Patient.class);
         return patient;
     }

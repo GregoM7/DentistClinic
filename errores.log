@@ -3,3 +3,20 @@
 1) Error mapping com.dh.DentistClinicHibernate.entity.Dentist to com.dh.DentistClinicHibernate.dto.DentistDTO
 
 1 error
+2022-04-19 10:23:05 ERROR GlobalExceptions:22 - ModelMapper mapping errors:
+
+1) Error mapping com.dh.DentistClinicHibernate.entity.Dentist to com.dh.DentistClinicHibernate.dto.DentistDTO
+
+1 error
+2022-04-19 10:26:52 ERROR GlobalExceptions:22 - No se encontro el paciente
+2022-04-19 19:09:38 ERROR GlobalExceptions:22 - Handler dispatch failed; nested exception is java.lang.Error: Unresolved compilation problem: 
+	The method setDateofadmission(LocalDate) is undefined for the type PatientDTO
+
+2022-04-19 19:17:53 ERROR GlobalExceptions:22 - Handler dispatch failed; nested exception is java.lang.Error: Unresolved compilation problem: 
+	The method setDateofadmission(LocalDate) is undefined for the type PatientDTO
+
+2022-04-19 20:31:24 ERROR GlobalExceptions:22 - No se encontro el turno
+2022-04-19 20:31:28 ERROR GlobalExceptions:22 - could not execute statement; SQL [n/a]; constraint [FKQYE11A8J9BY998HNPQYBIXNBX]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement
+2022-04-19 20:31:57 ERROR GlobalExceptions:22 - could not execute statement; SQL [n/a]; constraint [FKQYE11A8J9BY998HNPQYBIXNBX]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement
+2022-04-19 20:32:36 ERROR GlobalExceptions:22 - No se encontro el turno
+2022-04-19 21:07:14 ERROR GlobalExceptions:22 - No se encontro el paciente

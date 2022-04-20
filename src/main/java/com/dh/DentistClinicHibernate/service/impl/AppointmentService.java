@@ -1,6 +1,7 @@
 package com.dh.DentistClinicHibernate.service.impl;
 
 import com.dh.DentistClinicHibernate.dto.AppointmentDTO;
+import com.dh.DentistClinicHibernate.dto.DentistDTO;
 import com.dh.DentistClinicHibernate.dto.PatientDTO;
 import com.dh.DentistClinicHibernate.entity.Appointment;
 import com.dh.DentistClinicHibernate.entity.Dentist;
@@ -22,6 +23,10 @@ public class AppointmentService implements IAppointmentService {
     private ModelMapper mapper;
     @Autowired
     private AppointmentRepository appointmentRepository;
+    @Autowired
+    private DentistService dentistService;
+    @Autowired
+    private PatientService patientService;
 
     @Override
     public AppointmentDTO findById(Integer id) {
@@ -32,9 +37,21 @@ public class AppointmentService implements IAppointmentService {
 
     @Override
     public AppointmentDTO create(AppointmentDTO appointmentDTO) {
-        Appointment appointment = appointmentRepository.save(mapEntity(appointmentDTO));
-        return mapDTO(appointment);
-    }
+            //Nos aseguramos que tanto el odontologo como el paciente existan en la base de datos
+            PatientDTO patientDTO = patientService.findById(appointmentDTO.getPatient().getId());
+            DentistDTO dentistDTO = dentistService.findById(appointmentDTO.getDentist().getId());
+
+            //Creamos el turno
+            Appointment appointment = mapEntity(appointmentDTO);
+            //ver fecha
+            appointment.setDate(appointmentDTO.getDate());
+            appointment.setPatient(patientService.mapEntity(patientDTO));
+            appointment.setDentist(dentistService.mapEntity(dentistDTO));
+            //Guardamos el turno en la base de datos
+            appointment = appointmentRepository.save(appointment);
+            //Retornamos el turno
+            return mapDTO(appointment);
+        }
 
     @Override
     public void deleteById(Integer id) {
