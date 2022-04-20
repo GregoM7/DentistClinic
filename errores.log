@@ -20,3 +20,41 @@
 2022-04-19 20:31:57 ERROR GlobalExceptions:22 - could not execute statement; SQL [n/a]; constraint [FKQYE11A8J9BY998HNPQYBIXNBX]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement
 2022-04-19 20:32:36 ERROR GlobalExceptions:22 - No se encontro el turno
 2022-04-19 21:07:14 ERROR GlobalExceptions:22 - No se encontro el paciente
+2022-04-20 17:46:07 ERROR GlobalExceptions:22 - Required request body is missing: public org.springframework.http.ResponseEntity<com.dh.DentistClinicHibernate.dto.DentistDTO> com.dh.DentistClinicHibernate.controller.DentistController.create(com.dh.DentistClinicHibernate.dto.DentistDTO)
+2022-04-21 16:34:54 ERROR GlobalExceptions:22 - JSON parse error: Cannot deserialize value of type `int` from String "2312333312": Overflow: numeric value (2312333312) out of range of int (-2147483648 -2147483647); nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `int` from String "2312333312": Overflow: numeric value (2312333312) out of range of int (-2147483648 -2147483647)
+ at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 1, column: 67] (through reference chain: com.dh.DentistClinicHibernate.dto.DentistDTO["enrollment"])
+2022-04-21 16:37:16 ERROR GlobalExceptions:22 - JSON parse error: Cannot deserialize value of type `int` from String "2312333312": Overflow: numeric value (2312333312) out of range of int (-2147483648 -2147483647); nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `int` from String "2312333312": Overflow: numeric value (2312333312) out of range of int (-2147483648 -2147483647)
+ at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 1, column: 67] (through reference chain: com.dh.DentistClinicHibernate.dto.DentistDTO["enrollment"])
+2022-04-21 16:38:51 ERROR GlobalExceptions:22 - JSON parse error: Numeric value (777777342342) out of range of int (-2147483648 - 2147483647); nested exception is com.fasterxml.jackson.databind.JsonMappingException: Numeric value (777777342342) out of range of int (-2147483648 - 2147483647)
+ at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 5, column: 31] (through reference chain: com.dh.DentistClinicHibernate.dto.DentistDTO["enrollment"])
+2022-04-23 13:26:09 ERROR GlobalExceptions:22 - Unable to find com.dh.DentistClinicHibernate.entity.Dentist with id 1 (through reference chain: com.dh.DentistClinicHibernate.entity.Dentist$HibernateProxy$2nBNSXPg["name"])
+2022-04-23 13:34:05 ERROR GlobalExceptions:22 - JSON parse error: Cannot deserialize value of type `java.lang.String` from Object value (token `JsonToken.START_OBJECT`); nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot deserialize value of type `java.lang.String` from Object value (token `JsonToken.START_OBJECT`)
+ at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 1, column: 183] (through reference chain: com.dh.DentistClinicHibernate.dto.PatientDTO["address"]->com.dh.DentistClinicHibernate.dto.AddressDTO["state"])
+2022-04-23 13:35:08 ERROR GlobalExceptions:22 - JSON parse error: Cannot deserialize value of type `java.lang.String` from Object value (token `JsonToken.START_OBJECT`); nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot deserialize value of type `java.lang.String` from Object value (token `JsonToken.START_OBJECT`)
+ at [Source: (org.springframework.util.StreamUtils$NonClosingInputStream); line: 1, column: 191] (through reference chain: com.dh.DentistClinicHibernate.dto.PatientDTO["address"]->com.dh.DentistClinicHibernate.dto.AddressDTO["state"])
+2022-04-23 13:58:55 ERROR GlobalExceptions:22 - Required request body is missing: public org.springframework.http.ResponseEntity<com.dh.DentistClinicHibernate.dto.DentistDTO> com.dh.DentistClinicHibernate.controller.DentistController.create(com.dh.DentistClinicHibernate.dto.DentistDTO)
+2022-04-23 13:59:20 ERROR GlobalExceptions:22 - Handler dispatch failed; nested exception is java.lang.StackOverflowError
+2022-04-23 14:01:31 ERROR GlobalExceptions:22 - Handler dispatch failed; nested exception is java.lang.StackOverflowError
+2022-04-23 14:01:38 ERROR GlobalExceptions:22 - Handler dispatch failed; nested exception is java.lang.StackOverflowError
+2022-04-23 14:02:09 ERROR GlobalExceptions:22 - Handler dispatch failed; nested exception is java.lang.StackOverflowError
+2022-04-23 14:03:26 ERROR GlobalExceptions:22 - Handler dispatch failed; nested exception is java.lang.StackOverflowError
+2022-04-23 14:03:36 ERROR GlobalExceptions:22 - collection was evicted (through reference chain: com.dh.DentistClinicHibernate.entity.Dentist$HibernateProxy$P1hrfLHQ["name"])
+2022-04-23 14:04:06 ERROR GlobalExceptions:22 - collection was evicted (through reference chain: com.dh.DentistClinicHibernate.entity.Dentist$HibernateProxy$P1hrfLHQ["name"])
+2022-04-23 14:04:44 ERROR GlobalExceptions:22 - Handler dispatch failed; nested exception is java.lang.StackOverflowError
+2022-04-23 14:05:34 ERROR GlobalExceptions:22 - Request method 'GET' not supported
+2022-04-23 14:05:38 ERROR GlobalExceptions:22 - Handler dispatch failed; nested exception is java.lang.StackOverflowError
+2022-04-23 14:28:51 ERROR GlobalExceptions:22 - Handler dispatch failed; nested exception is java.lang.StackOverflowError
+2022-04-23 14:29:15 ERROR GlobalExceptions:22 - collection was evicted (through reference chain: com.dh.DentistClinicHibernate.entity.Dentist$HibernateProxy$enGgZJNQ["name"])
+2022-04-23 14:31:01 ERROR GlobalExceptions:22 - Unable to find com.dh.DentistClinicHibernate.entity.Dentist with id 1 (through reference chain: com.dh.DentistClinicHibernate.entity.Dentist$HibernateProxy$7r1frPCa["name"])
+2022-04-23 14:31:10 ERROR GlobalExceptions:22 - No se encontro el paciente
+2022-04-23 14:33:15 ERROR GlobalExceptions:22 - Required request body is missing: public org.springframework.http.ResponseEntity<com.dh.DentistClinicHibernate.dto.DentistDTO> com.dh.DentistClinicHibernate.controller.DentistController.create(com.dh.DentistClinicHibernate.dto.DentistDTO)
+2022-04-23 14:34:15 ERROR GlobalExceptions:22 - No se encontro el paciente
+2022-04-23 14:36:05 ERROR GlobalExceptions:22 - Unable to find com.dh.DentistClinicHibernate.entity.Dentist with id 2 (through reference chain: com.dh.DentistClinicHibernate.entity.Dentist$HibernateProxy$rcVwiruW["name"])
+2022-04-23 14:40:45 ERROR GlobalExceptions:22 - Unable to find com.dh.DentistClinicHibernate.entity.Dentist with id 2 (through reference chain: com.dh.DentistClinicHibernate.entity.Dentist$HibernateProxy$4JIGVaCP["name"])
+2022-04-23 14:41:48 ERROR GlobalExceptions:22 - Unable to find com.dh.DentistClinicHibernate.entity.Dentist with id 2 (through reference chain: com.dh.DentistClinicHibernate.entity.Dentist$HibernateProxy$4JIGVaCP["name"])
+2022-04-23 14:41:57 ERROR GlobalExceptions:22 - Unable to find com.dh.DentistClinicHibernate.entity.Dentist with id 2 (through reference chain: com.dh.DentistClinicHibernate.entity.Dentist$HibernateProxy$4JIGVaCP["name"])
+2022-04-23 14:45:52 ERROR GlobalExceptions:22 - Request method 'GET' not supported
+2022-04-23 14:46:02 ERROR GlobalExceptions:22 - No se encontro el turno
+2022-04-23 18:35:13 ERROR GlobalExceptions:22 - No se encontro el dentista
+2022-04-23 18:37:35 ERROR GlobalExceptions:22 - Required request body is missing: public org.springframework.http.ResponseEntity<com.dh.DentistClinicHibernate.dto.DentistDTO> com.dh.DentistClinicHibernate.controller.DentistController.create(com.dh.DentistClinicHibernate.dto.DentistDTO)
+2022-04-23 18:39:50 ERROR GlobalExceptions:22 - Unable to find com.dh.DentistClinicHibernate.entity.Dentist with id 1 (through reference chain: com.dh.DentistClinicHibernate.entity.Dentist$HibernateProxy$I0MEujk3["name"])

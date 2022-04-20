@@ -11,5 +11,6 @@ public class PatientDTO {
     private String lastname;
     private Integer identitycard;
     private LocalDate dateofadmission;
+    private String email;
     private AddressDTO address;
 }

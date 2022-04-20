@@ -62,7 +62,12 @@ public class AppointmentService implements IAppointmentService {
 
     @Override
     public AppointmentDTO update(AppointmentDTO appointmentDTO) {
-        Appointment appointment = appointmentRepository.save(mapEntity(appointmentDTO));
+        PatientDTO patientDTO = patientService.findById(appointmentDTO.getPatient().getId());
+        DentistDTO dentistDTO = dentistService.findById(appointmentDTO.getDentist().getId());
+        Appointment appointment = mapEntity(appointmentDTO);
+        appointment.setPatient(patientService.mapEntity(patientDTO));
+        appointment.setDentist(dentistService.mapEntity(dentistDTO));
+        appointment = appointmentRepository.save(mapEntity(appointmentDTO));
         return mapDTO(appointment);
     }
 

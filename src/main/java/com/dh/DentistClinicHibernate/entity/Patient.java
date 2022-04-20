@@ -20,6 +20,7 @@ public class Patient {
     private String lastname;
     private Integer identitycard;
     private LocalDate dateofadmission = LocalDate.now();
+    private String email;
     // Relacion con Address
     @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "id_address", referencedColumnName = "id")

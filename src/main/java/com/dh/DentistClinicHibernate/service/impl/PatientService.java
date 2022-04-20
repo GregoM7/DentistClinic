@@ -77,6 +77,10 @@ public class PatientService implements IPatientService {
     }
 
 
+    /*public Patient findByEmail(String email) {
+         return patientRepository.findByEmail(email);
+    }*/
+
 
     //-------MAPPER-------//
     private PatientDTO mapDTO(Patient patient){

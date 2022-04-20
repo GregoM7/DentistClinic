@@ -17,7 +17,7 @@ public class Dentist{
     private String name;
     private String lastname;
     private Integer enrollment;
-    @OneToMany(mappedBy = "dentist")
+    @OneToMany(mappedBy = "dentist", fetch = FetchType.LAZY)
     @JsonIgnore
     private Set<Appointment> appointment;
 

@@ -37,7 +37,7 @@ public class DentistService implements IDentistService{
     @Override
     public void deleteById(Integer id) {
         Dentist dentist = dentistRepository.findById(id)
-                .orElseThrow(()-> new RuntimeException("No se encontro el paciente"));
+                .orElseThrow(()-> new RuntimeException("No se encontro el dentista"));
         dentistRepository.delete(dentist);
     }
 

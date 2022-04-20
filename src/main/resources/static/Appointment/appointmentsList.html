@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Appointments</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="./js/get_app.js"></script>
+    <script type="text/javascript" src="./js/put_app.js"></script>
+    <script type="text/javascript" src="./js/delete_app.js"></script>
+    <link rel="stylesheet" href="../styles/home.css" />
+</head>
+<body>
+<div class="home__bar"> Management system V2 (Dental Clinic) </div>
+<div class="container">
+    <ul class="nav nav-pills">
+        <li class="nav-item">
+            <a class="nav-link" href="/index.html"><button class="boton-home">Home</button></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="./appointmentsList.html"> <button class="boton-home">All</button></a>
+        </li>
+    </ul>
+
+    <div id="div_student_table">
+        <h1>Appointments</h1>
+        <div class="row col-md-6 table-responsive" id="container">
+            <table id="dentistTable" class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Appointment Id</th>
+                    <th>Patient ID</th>
+                    <th>Dentist ID</th>
+                    <th>Date</th>
+                    <th>Hour</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6" style="display: none;
+											background-color:#e6fffa; padding:10px; border-radius:3px"
+             id="div_dentist_updating">
+            <form id="update_dentist_form">
+                <div class="form-group">
+                    <label >Id:</label>
+                    <input type="text" class="form-control" id="appointment_id" readonly>
+                </div>
+                <div class="form-group">
+                    <label >Patient ID:</label>
+                    <input type="text" class="form-control" placeholder="Patient_ID" id="patient">
+                </div>
+                <div class="form-group">
+                    <label >Dentist ID:</label>
+                    <input type="text" class="form-control" placeholder="Dentist_ID" id="dentist">
+                </div>
+                <div class="form-group">
+                    <label >Date:</label>
+                    <input type="text" class="form-control" placeholder="Date" id="date">
+                </div>
+                <div class="form-group">
+                    <label >Hour:</label>
+                    <input type="text" class="form-control" placeholder="Hour" id="hour">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Change</button>
+            </form>
+            <div id="response" style="display:none; margin:10px">
+            </div>
+        </div>
+    </div>
+    <hr>
+</div>
+</body>
+</html>

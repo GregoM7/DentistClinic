@@ -34,7 +34,7 @@ public class DentistController {
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<String> deleteById(@PathVariable("id") Integer id){
         dentistservice.deleteById(id);
-        return new ResponseEntity<>("Patient Eliminated", HttpStatus.OK);
+        return new ResponseEntity<>("Dentist Eliminated", HttpStatus.OK);
     }
     @GetMapping("/list")
     public ResponseEntity<List<DentistDTO>> findAll(){

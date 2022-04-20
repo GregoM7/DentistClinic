@@ -9,6 +9,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("api/appointment")
 public class AppointmentController {
@@ -36,5 +38,9 @@ public class AppointmentController {
          appointmentService.deleteById(id);
          return new ResponseEntity<>("Se elimino el turno", HttpStatus.OK);
     }
-    
+    @GetMapping("/list")
+    public ResponseEntity<List<AppointmentDTO>> findAll() throws ResourceNotFoundException {
+        List<AppointmentDTO> list = appointmentService.findAll();
+        return new ResponseEntity<>(list, HttpStatus.OK);
+    }
 }
