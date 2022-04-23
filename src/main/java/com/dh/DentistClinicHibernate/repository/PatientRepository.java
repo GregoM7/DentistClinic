@@ -8,7 +8,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface PatientRepository extends JpaRepository<Patient,Integer> {
 
-   // @Query("SELECT * FROM patients WHERE email = ?1")
-    //public Patient findByEmail (String email);
-
+    @Query(value = "SELECT * FROM patients WHERE patients.email = ?1", nativeQuery = true)
+    Patient findByEmail(String email);
 }

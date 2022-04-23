@@ -31,7 +31,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .anyRequest()
                 .authenticated().and()
                 .formLogin()
-                .defaultSuccessUrl("/index.html", true);
+                .defaultSuccessUrl("/index.html",true);
         http.headers().frameOptions().sameOrigin();
     }
 
